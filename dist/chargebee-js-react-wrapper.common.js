@@ -144,7 +144,9 @@ class Element extends React.Component {
     }
     render() {
         const { className } = this.props;
-        return (React.createElement("div", { id: this.id, ref: this.ElementRef, className: className }, this.props.children));
+        return (React.createElement(React.Fragment, null,
+            React.createElement(React.Fragment, null, "Deneme"),
+            React.createElement("div", { id: this.id, ref: this.ElementRef, className: className }, this.props.children)));
     }
 }
 

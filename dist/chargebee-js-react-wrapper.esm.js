@@ -1,4 +1,4 @@
-import { Component, createRef, createElement, createContext, forwardRef, Fragment } from 'react';
+import { Component, createRef, createElement, Fragment, createContext, forwardRef } from 'react';
 
 /******************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -140,7 +140,9 @@ class Element extends Component {
     }
     render() {
         const { className } = this.props;
-        return (createElement("div", { id: this.id, ref: this.ElementRef, className: className }, this.props.children));
+        return (createElement(Fragment, null,
+            createElement(Fragment, null, "Deneme"),
+            createElement("div", { id: this.id, ref: this.ElementRef, className: className }, this.props.children)));
     }
 }
 
