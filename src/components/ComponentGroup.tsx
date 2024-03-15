@@ -83,6 +83,7 @@ export default class ChargebeeComponents extends React.Component<ChargebeeCompon
         // @ts-ignore
         const cbInstance = Chargebee.getInstance();
         cbInstance.load("components").then(() => {
+            debugger;
             let cbComponent = cbInstance.createComponent(type, options)
             // Attach listeners if specified (only applicable for combined field)
             if(onReady) cbComponent.on('ready', onReady);
